@@ -1,14 +1,13 @@
 package sort
 
 import (
-	"fmt"
 	"testing"
 )
 
 func TestBubbleSort(t *testing.T) {
 	a := []int{4, 1, 1, 3, 5, 2, 9, 7, 8, 10}
 	bubbleSort(&a)
-	fmt.Println(a)
+	t.Log(a)
 }
 
 func bubbleSort(a *[]int) {
