@@ -14,6 +14,8 @@ func TestSlice(t *testing.T) {
 	t.Log(s)
 }
 
+// https://coolshell.cn/articles/21128.html 切片入坑文档
+
 func TestSliceV2(t *testing.T) {
 	s := []int{1, 2, 3, 4}
 	fmt.Printf("Address of i=%d:\t%p\n", s, &s[0])
