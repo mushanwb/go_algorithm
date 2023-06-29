@@ -52,3 +52,26 @@ func TestSliceV3(t *testing.T) {
 	t.Log(b) // [3 2]
 	// s 没有变，因为 append 会复制另外一个内存，导致 s b 不在共享内存
 }
+
+// 测试切片后，在 append
+func TestSliceV4(t *testing.T) {
+	s := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	// 切割 s
+	b := s[0:4]
+	c := s[4:9]
+	//往 b 中 append 数据
+	b = append(b, 10)
+	// 打印
+	t.Log(s) // [1 2 3 4 10 6 7 8 9]
+	t.Log(b) // [1 2 3 4 10]
+	t.Log(c) // [10 6 7 8 9]
+	// s,c 中的数据会发生变更
+	//往c中添加元素
+	c = append(c, 11)
+	//在往b中添加元素
+	b = append(b, 12)
+	t.Log(s) // [1 2 3 4 10 12 7 8 9]
+	t.Log(b) // [1 2 3 4 10 12]
+	t.Log(c) // [10 6 7 8 9 11]
+	// s 和 b 中元素都会发生变声，而c不在变
+}
