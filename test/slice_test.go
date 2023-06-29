@@ -15,7 +15,11 @@ func TestSlice(t *testing.T) {
 }
 
 // https://coolshell.cn/articles/21128.html 切片入坑文档
+/*
+ 切片是共享内存的
+*/
 
+// 测试切片切割
 func TestSliceV2(t *testing.T) {
 	s := []int{1, 2, 3, 4}
 	fmt.Printf("Address of i=%d:\t%p\n", s, &s[0])
