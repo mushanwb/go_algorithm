@@ -13,7 +13,7 @@ func TestQueue(t *testing.T) {
 	t.Log(q.Pop())
 	t.Log(q.Pop())
 	t.Log(q.Pop())
-	t.Log(q.len())
+	t.Log(q.Len())
 	t.Log(q)
 }
 
@@ -22,7 +22,7 @@ func (q *QueueArray) Push(data interface{}) {
 }
 
 func (q *QueueArray) Pop() (data interface{}) {
-	if q.len() == 0 {
+	if q.Len() == 0 {
 		return nil
 	}
 	data = (*q)[0]
@@ -30,6 +30,6 @@ func (q *QueueArray) Pop() (data interface{}) {
 	return data
 }
 
-func (q *QueueArray) len() (n int) {
+func (q *QueueArray) Len() (n int) {
 	return len(*q)
 }
