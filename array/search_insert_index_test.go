@@ -18,8 +18,8 @@ import "testing"
 输出: 4
 */
 func TestSearchInsertIndex(t *testing.T) {
-	nums := []int{1, 3}
-	target := 2
+	nums := []int{1, 3, 5, 6}
+	target := 5
 	index := searchInsert(nums, target)
 	t.Log(index)
 }
@@ -44,5 +44,5 @@ func searchInsert(nums []int, target int) int {
 			return mid
 		}
 	}
-	return (start+end)/2 + 1
+	return start + 1
 }
