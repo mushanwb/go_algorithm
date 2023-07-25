@@ -48,7 +48,7 @@ func merge(intervals [][]int) [][]int {
 				// 小则合并区间
 				if v[1] > last[1] {
 					// 最后一个数据大才合并，否则是包含，不用变更
-					result[len(result)-1][1] = v[1]
+					last[1] = v[1]
 				}
 			} else {
 				// 大则加入
